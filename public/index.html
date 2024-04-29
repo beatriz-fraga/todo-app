@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt_BR">
+<html lang="pt_BR" ng-app="todo-app">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,21 +8,44 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./assets/css/main.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
     <title>To Do List</title>
   </head>
-  <body>
+  <body ng-controller="todo-controller">
     <div class="container">
       <main>
         <div class="title-area">
-          <h1 class="fill">ToDo App</h1>
+          <h1 class="fill" ng-bind="title">ToDo App</h1>
         </div>
         <div class="action-area">
-          <input type="text" placeholder="Nome da Tarefa" id="task-place" />
-          <button type="button" id="action-btn">Criar</button>
+          <input
+            type="text"
+            placeholder="Nome da Tarefa"
+            id="task-place"
+            ng-model="taskName"
+          />
+          <button type="button" id="action-btn" ng-click="addTask()">
+            Criar
+          </button>
         </div>
-        <div class="tasks-area" id="tasks-area"></div>
+        <div class="tasks-area" id="tasks-area">
+          <label class="task-content" ng-repeat="task in taskList">
+            <input
+              type="checkbox"
+              ng-change="updateTask(task.id)"
+              ng-model="task.checked"
+            />
+            <p>{{task.name}}</p>
+            <button ng-click="deleteTask(task.id)" class="delete-btn">
+              <i class="ri-delete-bin-6-line"></i>
+            </button>
+          </label>
+          <p class="no-tasks" ng-if="taskList.lenght == 0">
+            Nenhuma tarefa cadastrada.
+          </p>
+        </div>
       </main>
     </div>
-    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/angular.js"></script>
   </body>
 </html>
