@@ -1,4 +1,3 @@
-
 const taskInputEl = document.getElementById("task-place");
 const actionBtn = document.getElementById("action-btn");
 const taskList = document.getElementById("tasks-area");

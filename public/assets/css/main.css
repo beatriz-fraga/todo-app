@@ -44,9 +44,31 @@ main {
   color: #fff;
 }
 
+.action-area {
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+.action-area button {
+  background-color: #121418;
+  color: #fff;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  height: 32px;
+  width: 60px;
+  border-radius: 4px;
+  border: none;
+}
+
 #task-place {
+  width: 100%;
   background-color: #9c9c9c;
-  width: 500px;
   padding: 15px 10px;
   border-radius: 12px;
   border: 1px solid #fff;
@@ -96,23 +118,6 @@ main {
 
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-}
-
-.action-area {
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.action-area button {
-  background-color: #121418;
-  color: #fff;
-  position: absolute;
-  right: 8px;
-  top: 8px;
-  height: 32px;
-  width: 60px;
-  border-radius: 4px;
-  border: none;
 }
 
 .delete-btn {
